@@ -3,9 +3,7 @@ package com.thoughtworks.capability.gtb.entrancequiz.controller;
 import com.thoughtworks.capability.gtb.entrancequiz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -26,5 +24,12 @@ public class StudentController {
     public ResponseEntity<List<Map<Integer, String>>> grouping() {
         final List<Map<Integer, String>> lists = studentService.grouping();
         return ResponseEntity.ok(lists);
+    }
+
+    @PostMapping("/student")
+    public ResponseEntity<Void> addAllOrder(@RequestBody Map inputStudent) {
+        System.out.println(inputStudent.get("inputStudent"));
+        studentService.addStudent(String.valueOf(inputStudent.get("inputStudent")));
+        return ResponseEntity.created(null).build();
     }
 }

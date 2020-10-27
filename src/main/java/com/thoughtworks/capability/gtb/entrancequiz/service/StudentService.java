@@ -34,4 +34,8 @@ public class StudentService {
         System.out.println(maps);
         return maps;
     }
+
+    public void addStudent(String inputStudent) {
+        studentDao.addStudent(inputStudent);
+    }
 }

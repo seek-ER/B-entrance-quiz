@@ -30,4 +30,8 @@ public class StudentDao {
     public Map<Integer, String> getAllStudent() {
         return studentMap;
     }
+
+    public void addStudent(String inputStudent) {
+        studentMap.put(studentMap.size() + 1, inputStudent);
+    }
 }
