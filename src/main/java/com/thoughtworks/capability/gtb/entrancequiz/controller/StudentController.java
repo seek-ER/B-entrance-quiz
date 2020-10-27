@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -19,5 +20,11 @@ public class StudentController {
     public ResponseEntity<Map<Integer, String>> getOrders() {
         final Map<Integer, String> allStudents = studentService.getAllStudents();
         return ResponseEntity.ok(allStudents);
+    }
+
+    @GetMapping("/grouping")
+    public ResponseEntity<List<Map<Integer, String>>> grouping() {
+        final List<Map<Integer, String>> lists = studentService.grouping();
+        return ResponseEntity.ok(lists);
     }
 }
