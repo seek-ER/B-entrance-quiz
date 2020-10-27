@@ -26,4 +26,8 @@ public class StudentDao {
         studentMap.put(14, "大乔");
         studentMap.put(15, "蔡文姬");
     }
+
+    public Map<Integer, String> getAllStudent() {
+        return studentMap;
+    }
 }
