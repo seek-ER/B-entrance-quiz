@@ -32,6 +32,7 @@ public class StudentDao {
     }
 
     public void addStudent(String inputStudent) {
+        //TODO GTB-工程实践: - StudentDao.java:35 这种自增方式线程不安全，了解下AtomicInteger
         studentMap.put(studentMap.size() + 1, inputStudent);
     }
 }
